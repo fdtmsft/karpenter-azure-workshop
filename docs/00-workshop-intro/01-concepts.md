@@ -26,6 +26,9 @@ NodePools define how Karpenter manages unschedulable pods and configures nodes. 
 
 You can have multiple NodePools in a cluster, each tailored for different workloads or teams.
 
+!!! note "Karpenter NodePools and AKS NodePools"
+    While having the same name, there is no link between a Karpenter NodePool and an AKS NodePool, Karpenter provisions VMs directly in the node resource group associated to the AKS cluster as single VMs.
+
 **NodeClasses**
 
 NodeClasses configure cloud provider-specific settings. They define characteristics such as:

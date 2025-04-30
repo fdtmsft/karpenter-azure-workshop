@@ -1,0 +1,105 @@
+site_name: Karpenter on AKS Workshop
+site_description: Workshop for learning Karpenter on Azure Kubernetes Service (AKS)
+site_author: Microsoft
+nav:
+  - Homepage: index.markdown
+  - Workshop Introduction:
+    - Core Concepts: 00-workshop-intro/01-concepts.md
+    - Setup AKS and NAP: 00-workshop-intro/02-setup.md
+    - '(Optional): Setup Self-Hosted Karpenter on AKS': 00-workshop-intro/03-self-hosted-karpenter.md
+  - Module 1 - Nodepool Basics: 01-nodepools/index.md
+  - Module 2 - Node Disruption:
+    - Disruption with Karpenter: 02-disruption/01-intro.md
+    - Cost Optimization and Workload Protection: 02-disruption/02-consolidation.md
+    - '(Optional) Additional Disruption Concepts': 02-disruption/03-additional-disruption.md
+  - Module 3 - Multi Architecture Support: 03-multi-architecture/index.md
+  - Module 4 - Spot with Karpenter: 04-spot-instances/index.md
+  - Module 5 - Team Isolation and Multiple Nodepools: 05-team-isolation/index.md
+  - Module 6 - Advanced Pod Scheduling and Contraints: 06-advanced-scheduling/index.md
+  - Conclusion: 07-conclusion/index.md
+  - Cleanup: 08-cleanup/index.md
+  - Authors & Contributors: 98-authors/index.md
+  - Resources & FAQ: 99-appendix/index.md
+
+theme:
+  name: material
+  # custom_dir: docs/overrides
+  font:
+    text: Ubuntu
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - header.autohide
+    - navigation.instant
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+  logo: assets/images/logo.svg
+  favicon: assets/images/microsoft.svg
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - pymdownx.keys
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.snippets:
+      base_path: '.'
+      check_paths: true
+      url_download: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: '!!python/name:pymdownx.superfences.fence_code_format'
+  - meta
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - attr_list
+  - md_in_html
+
+copyright: Copyright &copy; 2025 Microsoft
+
+plugins:
+  - search
+  - macros
+  - glightbox
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/fdtmsft/karpenter-azure-workshop
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+repo_url: https://github.com/fdtmsft/karpenter-azure-workshop
+edit_uri: edit/main/docs

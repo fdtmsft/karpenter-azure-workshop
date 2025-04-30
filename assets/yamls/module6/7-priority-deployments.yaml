@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: high-priority-workload
+  namespace: workshop
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: high-priority
+  template:
+    metadata:
+      labels:
+        app: high-priority
+    spec:
+      priorityClassName: high-priority
+      containers:
+        - name: high-priority-app
+          image: karpenterossazuredemo.azurecr.io/pause:3.7
+          resources:
+            requests:
+              cpu: 1
+      nodeSelector:
+        aks-karpenter: priority-demo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: low-priority-workload
+  namespace: workshop
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: low-priority
+  template:
+    metadata:
+      labels:
+        app: low-priority
+    spec:
+      priorityClassName: low-priority
+      containers:
+        - name: low-priority-app
+          image: karpenterossazuredemo.azurecr.io/pause:3.7
+          resources:
+            requests:
+              cpu: 1
+      nodeSelector:
+        aks-karpenter: priority-demo

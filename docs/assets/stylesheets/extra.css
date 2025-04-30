@@ -1,0 +1,17 @@
+/* This file is intentionally left blank. */
+.md-grid {
+    max-width: 1600px; /* Or your desired width */
+}
+
+/* Logo styling - clean and minimal approach */
+.md-header__button.md-logo {
+    padding: 4px;
+}
+
+/* Make the logo white using a filter */
+.md-header__button.md-logo svg,
+.md-header__button.md-logo img {
+    width: 2rem;
+    height: 2rem;
+    filter: brightness(0) invert(1);
+}

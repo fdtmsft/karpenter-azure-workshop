@@ -1,0 +1,8 @@
+apiVersion: karpenter.azure.com/v1alpha2
+kind: AKSNodeClass
+metadata:
+  name: azurelinuxnodeclass
+  annotations:
+    kubernetes.io/description: "Basic AKSNodeClass for running AzureLinux nodes"
+spec:
+  imageFamily: AzureLinux

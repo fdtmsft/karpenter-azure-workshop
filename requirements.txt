@@ -1,0 +1,7 @@
+mkdocs>=1.5.2
+mkdocs-material==9.2.0
+pymdown-extensions==10.0.1
+pygments>=2.15.0
+mkdocs-git-revision-date-plugin==0.3.2
+mkdocs-macros-plugin==1.0.4
+mkdocs-glightbox==0.3.4

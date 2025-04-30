@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inflate-team-research
+  namespace: workshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inflate-team
+  template:
+    metadata:
+      labels:
+        app: inflate-team
+        team: research
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+        - name: inflate
+          image: karpenterossazuredemo.azurecr.io/pause:3.7
+          resources:
+            requests:
+              cpu: 1
+      nodeSelector:
+        microsoft.com/team: team-research
+        aks-karpenter: demo-team
+      tolerations:
+        - key: "microsoft.com/team"
+          operator: "Equal"
+          value: "team-research"
+          effect: "NoSchedule"

@@ -175,6 +175,9 @@ kubectl delete nodepool default-demo
 
 Multi-node consolidation evaluates your entire cluster and can consolidate multiple underutilized nodes into fewer, more efficiently packed nodes.
 
+!!! note "Time constraint"
+    This exercise takes significant time to demo, if time is short please feel free to read and continue to next section.
+
 #### Step 1: Create a NodePool for Multi-Node Consolidation
 
 Let's update our NodePool specifically for testing multi-node consolidation:

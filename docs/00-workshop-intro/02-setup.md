@@ -218,3 +218,6 @@ The tool will provide a real-time visualization of node resources and pod alloca
 Now that you have a working AKS cluster with Karpenter, you're ready to deploy workloads and observe how Karpenter automatically provisions the appropriate nodes based on your workload requirements.
 
 In the next sections, we'll explore how to configure node pools, set constraints, and deploy sample workloads to demonstrate NAP's capabilities.
+
+!!! note "AKSNodeClass API version"
+    This workshop current uses the `AKSNodeClass` API version `v1alpha2` which is already deprecated in favor of v1beta1 in the self-hosted version. Please feel free to update the API version in the manifests to v1beta1 if you want to use the latest version, and it should work as expected.
